@@ -2,167 +2,228 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'none';">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Williams — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<meta name="description" content="Williams Aoussi, étudiant en Master 2 Informatique à Abidjan : applications web sécurisées, machine learning et cybersécurité.">
+<meta name="theme-color" content="#F77F00">
+<title>Williams Aoussi, étudiant en Master 2 Informatique</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F77F00'/%3E%3Cpath d='M9 16l10 32 13-24 13 24 10-32' fill='none' stroke='%2304150F' stroke-width='7'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/anybody-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
 
-<canvas id="particles"></canvas>
+<a class="skip" href="#projets">Aller aux projets</a>
 
-<nav>
-  <div class="nav-logo">williams<span>.dev</span></div>
-  <div class="nav-links">
-    <a href="#projets">Projets</a>
-    <a href="#competences">Compétences</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+<div class="progress" aria-hidden="true"><span></span></div>
 
-<header class="hero">
-  <div class="eyebrow">DISPONIBLE POUR DE NOUVEAUX PROJETS</div>
-  <h1 class="hero-title">Williams<br>construit des<br>systèmes.</h1>
-  <p class="hero-sub">Étudiant en <b>Master 2 Informatique</b> à AGITEL Formation, Abidjan. Je conçois des outils qui touchent au développement web, à la donnée, aux bases de données et à la sécurité — du chiffrement de fichiers aux applications full-stack.</p>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="#projets">Voir les projets</a>
-    <a class="btn btn-ghost" href="https://github.com/W1LL1VMS" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-  </div>
-  <div class="scroll-hint"><div class="line"></div>SCROLL</div>
+<header class="bar">
+  <a class="chip" href="#top">Williams Aoussi</a>
+  <nav aria-label="Navigation principale">
+    <a class="chip" href="#projets">Projets</a>
+    <a class="chip" href="#parcours">Parcours</a>
+    <a class="chip" href="#contact">Contact</a>
+  </nav>
 </header>
 
-<section id="projets">
-  <div class="section-head">
-    <div class="section-tag">// 01 — TRAVAUX</div>
-    <div class="section-title">Des projets pensés pour être utilisés, pas juste terminés.</div>
-  </div>
-  <div class="projects-grid">
+<main id="top">
 
-    <div class="project-card">
-      <span class="project-num">PROJET 01</span>
-      <h3 class="project-title">Crypto Vault CLI</h3>
-      <p class="project-desc">Outil en ligne de commande pour chiffrer et déchiffrer des fichiers avec un chiffrement hybride AES-256 + RSA-2048, sur le principe utilisé par HTTPS et PGP. Interface soignée, tests automatisés.</p>
-      <div class="project-stack">
-        <span class="stack-pill">Python</span>
-        <span class="stack-pill">cryptography</span>
-        <span class="stack-pill">rich</span>
-        <span class="stack-pill">pytest</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/W1LL1VMS/crypto-vault-cli" target="_blank" rel="noopener noreferrer">Code source →</a>
+  <section class="scene hero" data-scene="pin" aria-labelledby="hero-title">
+    <div class="pin">
+      <h1 id="hero-title" class="name">
+        <span class="line">Williams</span>
+        <span class="line">Aoussi</span>
+      </h1>
+      <p class="lede">Étudiant en Master 2 Informatique à Abidjan.</p>
+      <p class="hint" aria-hidden="true">Fais défiler</p>
+    </div>
+  </section>
+
+  <section class="scene manifesto" data-scene="pin" aria-label="Présentation">
+    <div class="pin">
+      <p class="statement" data-words>Je construis des outils qui protègent des données, des interfaces qui restent simples à utiliser, et des modèles dont je mesure honnêtement les limites.</p>
+    </div>
+  </section>
+
+  <section id="projets" class="scene track" data-scene="rail" aria-labelledby="projets-title">
+    <div class="pin">
+      <h2 id="projets-title" class="sr-only">Projets</h2>
+      <div class="rail">
+
+        <article class="panel panel-crypto" aria-labelledby="crypto-title">
+          <div class="panel-text">
+            <h3 id="crypto-title">Crypto Vault CLI</h3>
+            <p class="lead">Chiffrer un fichier sans exposer la clé.</p>
+            <p>Un outil en ligne de commande qui chiffre les fichiers avec AES-256 et protège la clé AES avec RSA-2048. C’est le principe qu’utilisent HTTPS et PGP.</p>
+            <p class="stack">Python, cryptography, rich, pytest.</p>
+            <a class="btn" href="https://github.com/W1LL1VMS/crypto-vault-cli" target="_blank" rel="noopener noreferrer" aria-label="Voir le code de Crypto Vault CLI sur GitHub">Voir le code sur GitHub</a>
+          </div>
+          <div class="viz viz-crypto" aria-hidden="true">
+            <p class="plain">Rendez-vous demain, salle B2.</p>
+            <p class="hex" data-cipher="0a93e169 a03d5dc4 22b6744a 87d59417&#10;9dde084d a6c1ea25 36e3af61 41fe04e1">0a93e169 a03d5dc4 22b6744a 87d59417&#10;9dde084d a6c1ea25 36e3af61 41fe04e1</p>
+            <p class="note">Le contenu, chiffré avec AES-256</p>
+            <p class="hex" data-cipher="6ee84b27 7e97a39b 57422c9b 22394b5f&#10;3283e7a7 f79e3898 4c392b2d 891ef183">6ee84b27 7e97a39b 57422c9b 22394b5f&#10;3283e7a7 f79e3898 4c392b2d 891ef183</p>
+            <p class="note">La clé AES, chiffrée avec RSA-2048</p>
+          </div>
+        </article>
+
+        <article class="panel panel-api" aria-labelledby="api-title">
+          <div class="panel-text">
+            <h3 id="api-title">Task API Secure</h3>
+            <p class="lead">Une API pour gérer des tâches, construite pour résister.</p>
+            <p>Connexion par JWT, jeton de renouvellement dans un cookie HttpOnly, mots de passe hachés avec bcrypt. Que le compte existe ou non, la réponse à une mauvaise connexion est la même.</p>
+            <p class="stack">Node.js, Express, PostgreSQL, Prisma, Swagger.</p>
+            <a class="btn" href="https://github.com/W1LL1VMS/task-api-secure" target="_blank" rel="noopener noreferrer" aria-label="Voir le code de Task API Secure sur GitHub">Voir le code sur GitHub</a>
+          </div>
+          <div class="viz viz-api" aria-hidden="true">
+            <svg viewBox="0 0 480 360" role="img" focusable="false">
+              <g class="actors">
+                <text x="70" y="34" text-anchor="middle">Navigateur</text>
+                <text x="240" y="34" text-anchor="middle">API</text>
+                <text x="410" y="34" text-anchor="middle">Base de données</text>
+              </g>
+              <g class="lifelines">
+                <line x1="70" y1="52" x2="70" y2="344"/>
+                <line x1="240" y1="52" x2="240" y2="344"/>
+                <line x1="410" y1="52" x2="410" y2="344"/>
+              </g>
+              <g class="step s0">
+                <path pathLength="1" d="M70 120 H236"/>
+                <path class="head" d="M226 112 L238 120 L226 128"/>
+                <text x="155" y="108" text-anchor="middle">POST /auth/login</text>
+              </g>
+              <g class="step s1">
+                <path pathLength="1" d="M240 188 H406"/>
+                <path class="head" d="M396 180 L408 188 L396 196"/>
+                <text x="325" y="176" text-anchor="middle">mot de passe vérifié</text>
+              </g>
+              <g class="step s2 token">
+                <path pathLength="1" d="M240 256 H74"/>
+                <path class="head" d="M84 248 L72 256 L84 264"/>
+                <text x="155" y="244" text-anchor="middle">jeton d’accès, 15 min</text>
+              </g>
+              <g class="step s3 token">
+                <path pathLength="1" d="M240 316 H74"/>
+                <path class="head" d="M84 308 L72 316 L84 324"/>
+                <text x="155" y="304" text-anchor="middle">cookie HttpOnly</text>
+              </g>
+            </svg>
+          </div>
+        </article>
+
+        <article class="panel panel-ui" aria-labelledby="ui-title">
+          <div class="panel-text">
+            <h3 id="ui-title">Task Manager UI</h3>
+            <p class="lead">Une interface qui garde le jeton en mémoire.</p>
+            <p>L’interface React de cette API : le jeton d’accès ne quitte jamais la mémoire du navigateur, et la session se renouvelle toute seule.</p>
+            <p class="stack">React, Vite, Tailwind CSS, Axios.</p>
+            <a class="btn" href="https://github.com/W1LL1VMS/task-manager-ui" target="_blank" rel="noopener noreferrer" aria-label="Voir le code de Task Manager UI sur GitHub">Voir le code sur GitHub</a>
+          </div>
+          <div class="viz viz-ui" aria-hidden="true">
+            <div class="heads"><span>À faire</span><span>En cours</span><span>Terminé</span></div>
+            <div class="lane">
+              <div class="card c-static c-d">Rédiger le README</div>
+              <div class="card c-static c-e">Configurer la base</div>
+              <div class="card c-move c-a">Préparer la soutenance</div>
+              <div class="card c-move c-b">Corriger le TP de réseaux</div>
+              <div class="card c-move c-c">Réviser Oracle</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel panel-ml" aria-labelledby="ml-title">
+          <div class="panel-text">
+            <h3 id="ml-title">Intrusion Detector ML</h3>
+            <p class="lead">Un modèle évalué sans complaisance.</p>
+            <p>Un modèle de détection d’intrusion réseau sur le jeu de données NSL-KDD. Il atteint 0,92 de F1 macro en validation croisée et 0,61 sur le jeu de test. Le projet explique cet écart au lieu de le cacher.</p>
+            <p class="stack">Python, scikit-learn, pandas, Streamlit.</p>
+            <a class="btn" href="https://github.com/W1LL1VMS/intrusion-detector-ml" target="_blank" rel="noopener noreferrer" aria-label="Voir le code de Intrusion Detector ML sur GitHub">Voir le code sur GitHub</a>
+          </div>
+          <div class="viz viz-ml" aria-hidden="true">
+            <div class="bar-row">
+              <p class="bar-label"><span>Validation croisée</span><b><span data-count data-to="0.92" data-decimals="2">0,92</span></b></p>
+              <div class="bar-track"><div class="fill fill-cv" data-to="0.92"></div></div>
+            </div>
+            <div class="bar-row">
+              <p class="bar-label"><span>Jeu de test</span><b><span data-count data-to="0.61" data-decimals="2">0,61</span></b></p>
+              <div class="bar-track"><div class="fill fill-test" data-to="0.61"></div></div>
+            </div>
+            <div class="bar-row">
+              <p class="bar-label"><span>Attaques d’un type connu détectées</span><b><span data-count data-to="84" data-decimals="0">84</span> %</b></p>
+              <div class="bar-track"><div class="fill fill-known" data-to="0.84"></div></div>
+            </div>
+            <div class="bar-row">
+              <p class="bar-label"><span>Attaques d’un type jamais vu détectées</span><b><span data-count data-to="36" data-decimals="0">36</span> %</b></p>
+              <div class="bar-track"><div class="fill fill-unseen" data-to="0.36"></div></div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
+  </section>
 
-    <div class="project-card">
-      <span class="project-num">PROJET 02</span>
-      <h3 class="project-title">Task API Secure</h3>
-      <p class="project-desc">API REST de gestion de tâches avec authentification JWT, rôles utilisateurs et des choix de sécurité documentés (protection contre l'énumération de comptes, contrôle d'appartenance sur chaque ressource, rate limiting).</p>
-      <div class="project-stack">
-        <span class="stack-pill">Node.js</span>
-        <span class="stack-pill">Express</span>
-        <span class="stack-pill">PostgreSQL</span>
-        <span class="stack-pill">Prisma</span>
-        <span class="stack-pill">JWT</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/W1LL1VMS/task-api-secure" target="_blank" rel="noopener noreferrer">Code source →</a>
+  <section id="parcours" class="flow" data-scene="flow" aria-labelledby="parcours-title">
+    <div class="flow-head">
+      <h2 id="parcours-title">Ce que j’apprends</h2>
+    </div>
+    <ul class="steps">
+      <li class="step">
+        <p class="step-title">Master 2 Informatique</p>
+        <p class="step-sub">AGITEL Formation, Abidjan</p>
+      </li>
+      <li class="step">
+        <p class="step-title">IBM Get Ready with AI</p>
+        <p class="step-sub">Certification terminée</p>
+      </li>
+      <li class="step">
+        <p class="step-title">IBM Data Fundamentals</p>
+        <p class="step-sub">Certification en cours</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="scene skills" data-scene="steps" data-steps="5" aria-labelledby="skills-title">
+    <div class="pin">
+      <h2 id="skills-title" class="sr-only">Compétences</h2>
+      <div class="groups">
+        <div class="grp">
+          <p class="grp-name">Langages</p>
+          <ul class="grp-items"><li>Python</li><li>JavaScript</li><li>Java</li><li>SQL</li><li>PHP</li></ul>
+        </div>
+        <div class="grp">
+          <p class="grp-name">Web</p>
+          <ul class="grp-items"><li>React</li><li>Node.js et Express</li><li>Tailwind CSS</li><li>Laravel</li><li>Django</li></ul>
+        </div>
+        <div class="grp">
+          <p class="grp-name">Données et IA</p>
+          <ul class="grp-items"><li>pandas</li><li>scikit-learn</li><li>Jupyter</li><li>Streamlit</li></ul>
+        </div>
+        <div class="grp">
+          <p class="grp-name">Bases de données</p>
+          <ul class="grp-items"><li>PostgreSQL</li><li>Oracle</li><li>MySQL</li><li>Prisma</li></ul>
+        </div>
+        <div class="grp">
+          <p class="grp-name">Sécurité</p>
+          <ul class="grp-items"><li>Authentification JWT</li><li>Chiffrement AES et RSA</li><li>Validation des entrées</li><li>Sécurisation d’API</li></ul>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="project-card">
-      <span class="project-num">PROJET 03</span>
-      <h3 class="project-title">Task Manager UI</h3>
-      <p class="project-desc">Interface React pour gérer ses tâches, branchée sur Task API Secure. Session maintenue par un cookie HttpOnly, access token gardé uniquement en mémoire, renouvellement automatique et vue administrateur.</p>
-      <div class="project-stack">
-        <span class="stack-pill">React</span>
-        <span class="stack-pill">Vite</span>
-        <span class="stack-pill">Tailwind CSS</span>
-        <span class="stack-pill">Axios</span>
-        <span class="stack-pill">React Router</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/W1LL1VMS/task-manager-ui" target="_blank" rel="noopener noreferrer">Code source →</a>
-      </div>
-    </div>
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Un stage, un projet, une question ?</h2>
+    <a class="mail" href="mailto:aoussi.williams@gmail.com">aoussi.williams@gmail.com</a>
+    <p class="links">
+      <a href="https://github.com/W1LL1VMS" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://linkedin.com/in/williams-aoussi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </p>
+    <p class="fine">Williams Aoussi, Abidjan, Côte d’Ivoire.</p>
+  </section>
 
+</main>
 
-    <div class="project-card">
-      <span class="project-num">PROJET 04</span>
-      <h3 class="project-title">Intrusion Detector ML</h3>
-      <p class="project-desc">Détection d'intrusion réseau par machine learning sur NSL-KDD. Le projet mesure l'écart entre un F1 macro de 0,92 en validation croisée et 0,61 sur le jeu de test, l'explique (attaques jamais vues, déséquilibre des classes) et en tire les limites de l'outil. Application de démonstration Streamlit.</p>
-      <div class="project-stack">
-        <span class="stack-pill">Python</span>
-        <span class="stack-pill">scikit-learn</span>
-        <span class="stack-pill">pandas</span>
-        <span class="stack-pill">Streamlit</span>
-        <span class="stack-pill">pytest</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/W1LL1VMS/intrusion-detector-ml" target="_blank" rel="noopener noreferrer">Code source →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="competences">
-  <div class="section-head">
-    <div class="section-tag">// 02 — STACK</div>
-    <div class="section-title">Les outils avec lesquels je travaille.</div>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <span class="skill-card-label">LANGAGES</span>
-      <div class="skill-tags">
-        <span class="skill-tag">Python</span><span class="skill-tag">PHP</span>
-        <span class="skill-tag">Java</span><span class="skill-tag">SQL</span>
-        <span class="skill-tag">JavaScript</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <span class="skill-card-label">WEB</span>
-      <div class="skill-tags">
-        <span class="skill-tag">Laravel</span><span class="skill-tag">Django</span>
-        <span class="skill-tag">React</span><span class="skill-tag">Node.js</span>
-        <span class="skill-tag">Express</span><span class="skill-tag">Tailwind CSS</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <span class="skill-card-label">DONNÉES</span>
-      <div class="skill-tags">
-        <span class="skill-tag">Oracle</span><span class="skill-tag">PostgreSQL</span>
-        <span class="skill-tag">MySQL</span><span class="skill-tag">scikit-learn</span>
-        <span class="skill-tag">pandas</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <span class="skill-card-label">SÉCURITÉ &amp; RÉSEAU</span>
-      <div class="skill-tags">
-        <span class="skill-tag">AES / RSA</span><span class="skill-tag">Audit réseau</span>
-        <span class="skill-tag">Authentification JWT</span><span class="skill-tag">Détection d'intrusion (ML)</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="contact-block">
-    <div class="contact-title">Discutons de votre prochain projet.</div>
-    <p class="contact-sub">Que ce soit pour un projet académique, un stage ou une collaboration, je réponds rapidement.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:aoussi.williams%40gmail.com">Écrire un email</a>
-      <a class="btn btn-ghost" href="https://linkedin.com/in/williams-aoussi" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-      <a class="btn btn-ghost" href="https://github.com/W1LL1VMS" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-    </div>
-  </div>
-</section>
-
-<footer>© 2026 Williams — Abidjan, Côte d'Ivoire</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
